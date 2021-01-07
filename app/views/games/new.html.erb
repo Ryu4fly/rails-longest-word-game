@@ -1,16 +1,15 @@
-<h1>New Game</h1>
-
 <p>********* Welcome to the longest word-game! *********</p>
 
 <p>Here is your grid:</p>
 
-<p><%= @letters %></p>
+<p><%= @grid_letters %></p>
 
 <form action="/score" method="post">
-  <input type="text" name="reponse" placeholder="Answer Here!">
+  <input type="text" name="response" placeholder="Answer Here!">
   <input type="submit" value="GO!">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <% hidden_field_tag 'start', @start_time %>
+  <%= hidden_field_tag :letters, @grid_letters %>
+  <%= hidden_field_tag :start, @start_time %>
 </form>
 
 <p>************************************************</p>
